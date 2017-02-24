@@ -19,29 +19,31 @@ export default class Login extends React.Component {
 
   render() {
   	return (
-  	  <Grid columns='equal'>
-  	    <Grid.Row>
-  	      <Grid.Column>
-  	        <Form onSubmit={this.handleSubmit.bind(this)}>
-  	          <Form.Group>
-  	            <Form.Input
-                  label='Username'
-  	  						value={this.props.login.username}
-  	  						onChange={ handleItemChange.bind(null, setLoginItem, 'username') }
-  	  						placeholder='Enter username here...'
-  	  					/>
+  	  <Grid columns='equal' centered padded>
+  	    <Form onSubmit={this.handleSubmit.bind(this)}>
+  	      <Grid.Row>
+  	        <Grid.Column>
+  	          <Form.Input
+                label='Username'
+  	  	  			value={this.props.login.username}
+  	  	  			onChange={ handleItemChange.bind(null, setLoginItem, 'username') }
+  	  	  			placeholder='Enter username here...'
+  	  	  		/>
+              </Grid.Column> 
+            </Grid.Row>
+            <Grid.Row>
+              <Grid.Column>
   	            <Form.Input
                   label='Password'
-  	  						value={this.props.login.password}
-  	  						onChange={ handleItemChange.bind(null, setLoginItem, 'password') }
-  	  						placeholder='Enter password here...'
+  	  	  				value={this.props.login.password}
+  	  	  				onChange={ handleItemChange.bind(null, setLoginItem, 'password') }
+  	  	  				placeholder='Enter password here...'
                   type='password'
-  	  					/>
-  	          </Form.Group>
-  	  				<Button type='submit' primary>Submit</Button>
-  	        </Form>
-  	      </Grid.Column>
-  	    </Grid.Row>
+  	  	  			/>
+  	  	  			<Button type='submit' primary>Submit</Button>
+  	        </Grid.Column>
+  	      </Grid.Row>
+  	    </Form>
   	  </Grid>
     );
   }
