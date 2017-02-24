@@ -3,7 +3,7 @@ import { Button, Form, Grid } from 'semantic-ui-react';
 import { handleItemChange } from '../helpers/changeHandlers';
 
 export default props => (
-  <div>
+  <div className='max500width multiColumnInput'>
     <Grid.Row>
       <Grid.Column>
 	      <Form.Input

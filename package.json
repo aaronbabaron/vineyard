@@ -58,6 +58,7 @@
     "redux-promise": "^0.5.3",
     "redux-promise-middleware": "^4.2.0",
     "redux-thunk": "^2.2.0",
+    "semantic-ui-calendar": "0.0.6",
     "semantic-ui-react": "^0.66.0",
     "sequelize": "^3.30.2",
     "styled-components": "^1.4.3",

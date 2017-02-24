@@ -40,7 +40,7 @@ export default class Signup extends React.Component {
 
   render() {
     return (
-      <div className='oneEm'>
+      <div className='oneEm max500width'>
 	      <Grid columns='equal'>
           <Grid.Row>
             <Grid.Column>
@@ -87,6 +87,8 @@ export default class Signup extends React.Component {
                   signup={ this.props.signup }
                 />
                 <Button
+                  primary
+                  fluid
                   disabled={ this.buttonStatus() }
                   type='submit'
                 >
