@@ -1,6 +1,7 @@
 import React from 'react';
 import { browserHistory } from 'react-router';
-import { Button, Col, ControlLabel, Form, FormControl, FormGroup, Grid, Row } from 'react-bootstrap';
+import {  Col, ControlLabel,  FormControl, FormGroup, Row } from 'react-bootstrap';
+import { Button, Form, Grid } from 'semantic-ui-react';
 import NameBirthdateInput from '../components/NameBirthdateInput';
 import { handleItemChange } from '../helpers/changeHandlers';
 import { setSignupItem, signup } from '../actions/signup';
@@ -39,83 +40,63 @@ export default class Signup extends React.Component {
 
   render() {
     return (
-	    <Grid>
-        <Row>
-          <Col xsOffset={2} xs={8} mdOffset={4} md={4}>
-            <h2>Sign up here!</h2>
-          </Col>
-        </Row>
-	      <Row>
-	        <Col xsOffset={2} xs={8} mdOffset={4} md={4}>
-            <Form inline onSubmit={ this.handleSubmit }>
-	            <FormGroup bsClass='multiColumnInput'>
-                <Row>
-                  <Col xs={12}>
-	                  <ControlLabel bsClass='control-label multiColumnInput'>Username</ControlLabel>
-                  </Col>
-                </Row>
-                <Row>
-                  <Col xs={12}>
-	                  <FormControl
-	    					    	value={this.props.signup.username}
-	    					    	onChange={ handleItemChange.bind(null, setSignupItem, 'username') }
-	    					    	placeholder='Username'
-                      bsClass='form-control multiColumnInput'
-	    					    />
-                  </Col>
-                </Row>
-              </FormGroup>
-              <FormGroup bsClass='multiColumnInput' validationState={ this.getPasswordValidationState() }>
-                <Row>
-                  <Col xs={12}>
-	                  <ControlLabel bsClass='control-label multiColumnInput'>Password</ControlLabel>
-                  </Col>
-                </Row>
-                <Row>
-                  <Col xs={12}>
-	                  <FormControl
+      <div className='oneEm'>
+	      <Grid columns='equal'>
+          <Grid.Row>
+            <Grid.Column>
+              <h2>Sign up here!</h2>
+            </Grid.Column>
+          </Grid.Row>
+	        <Grid.Row>
+	          <Grid.Column>
+              <Form onSubmit={ this.handleSubmit }>
+                <Grid.Row>
+                  <Grid.Column>
+	                  <Form.Input
+                      label="Username"
+	      				    	value={this.props.signup.username}
+	      				    	onChange={ handleItemChange.bind(null, setSignupItem, 'username') }
+	      				    	placeholder='Username'
+	      				    />
+                  </Grid.Column>
+                </Grid.Row>
+                <Grid.Row>
+                  <Grid.Column>
+	                  <Form.Input
+                      label='Password'
                       type='password'
-	    					    	value={this.props.signup.password}
-	    					    	onChange={ handleItemChange.bind(null, setSignupItem, 'password') }
-	    					    	placeholder='Password'
-                      bsClass='form-control multiColumnInput'
-	    					    />
-                  </Col>
-                </Row>
-                <Row>
-                  <Col xs={12}>
-	                  <ControlLabel bsClass='control-label multiColumnInput'>Confirm Password</ControlLabel>
-                  </Col>
-                </Row>
-                <Row>
-                  <Col xs={12}>
-	                  <FormControl
+	      				    	value={this.props.signup.password}
+	      				    	onChange={ handleItemChange.bind(null, setSignupItem, 'password') }
+	      				    	placeholder='Password'
+	      				    />
+                  </Grid.Column>
+                </Grid.Row>
+                <Grid.Row>
+                  <Grid.Column>
+	                  <Form.Input
+                      label='Confirm Password'
                       type='password'
-	    					    	value={this.props.signup.confirm_password}
-	    					    	onChange={ handleItemChange.bind(null, setSignupItem, 'confirm_password') }
-	    					    	placeholder='Confirm password'
-                      bsClass='form-control multiColumnInput'
-	    					    />
-                  </Col>
-                </Row>
-	            </FormGroup>
-              <NameBirthdateInput
-                setItem={ setSignupItem }
-                signup={ this.props.signup }
-              />
-              <Button
-                bsStyle="primary"
-                method="POST"
-                bsClass="btn pull-right btn-primary buttonWithMargin"
-                disabled={ this.buttonStatus() }
-                type='submit'
-              >
-                Submit
-              </Button>
-	          </Form>
-	        </Col>
-	      </Row>
-	    </Grid>
+	      				    	value={this.props.signup.confirm_password}
+	      				    	onChange={ handleItemChange.bind(null, setSignupItem, 'confirm_password') }
+	      				    	placeholder='Confirm password'
+	      				    />
+                  </Grid.Column>
+                </Grid.Row>
+                <NameBirthdateInput
+                  setItem={ setSignupItem }
+                  signup={ this.props.signup }
+                />
+                <Button
+                  disabled={ this.buttonStatus() }
+                  type='submit'
+                >
+                  Submit
+                </Button>
+	            </Form>
+	          </Grid.Column>
+	        </Grid.Row>
+	      </Grid>
+      </div>
     );
   }
 }

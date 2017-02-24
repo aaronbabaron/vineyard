@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { Sidebar } from 'semantic-ui-react';
+import { Segment, Sidebar } from 'semantic-ui-react';
 import store from '../store';
 import MainNavBar from '../components/MainNavBar';
 import LeftSideBar from '../components/LeftSideBar';
@@ -14,10 +14,11 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <Sidebar.Pushable>
-          <MainNavBar dispatch={this.props.dispatch} auth={this.props.authStatus} /> 
+        <Sidebar.Pushable as={Segment}>
           <LeftSideBar nav={this.props.nav} auth={this.props.authStatus} />
+
           <Sidebar.Pusher>
+            <MainNavBar dispatch={this.props.dispatch} auth={this.props.authStatus} /> 
             { 
               React.cloneElement(this.props.children, 
 	  		  			{

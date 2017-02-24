@@ -21,7 +21,7 @@ export default props => {
   return (
     <Sidebar 
       as={Menu} 
-      animation='overlay' 
+      animation='uncover' 
       visible={props.nav.leftSidebarVisible} 
       vertical 
       width='thin' 
